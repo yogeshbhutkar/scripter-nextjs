@@ -8,14 +8,14 @@ import { cn } from "@/lib/utils";
 import { useSession } from "next-auth/react";
 import { Outfit } from "next/font/google";
 import { redirect } from "next/navigation";
-import React, { useState } from "react";
+import React from "react";
 
 const outfit = Outfit({
   weight: ["600"],
   subsets: ["latin"],
 });
 
-export default function page() {
+export default function Page() {
   const session = useSession();
   if (session.status === "unauthenticated") {
     return redirect("/");
