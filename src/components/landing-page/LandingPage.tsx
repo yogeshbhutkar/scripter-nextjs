@@ -72,7 +72,7 @@ export default function LandingPage() {
               : toast.error("Sign In to continue");
           }}
           className="mt-5"
-          variant={"secondary"}
+          variant={"default"}
         >
           Get Started
           <ArrowRight className="h-4 w-4 mx-2" />
