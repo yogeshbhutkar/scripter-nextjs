@@ -6,7 +6,7 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
-import { Sparkles } from "lucide-react";
+import { Clapperboard, Sparkles } from "lucide-react";
 import { ScrollArea } from "../ui/scroll-area";
 
 export default function UrlRenderer() {
@@ -36,19 +36,27 @@ export default function UrlRenderer() {
     <div className="flex justify-center items-center">
       <div>
         <div className="flex items-center justify-center">
-          <div>
-            {url && <ReactPlayer url={url} />}
-            <Button
-              isLoading={isPending}
-              onClick={() => handleSubmit()}
-              className="w-full mt-3 border border-gray-800"
-            >
-              Generate
-              <span className="ml-2">
-                <Sparkles className="h-4 w-4" />
-              </span>
-            </Button>
-          </div>
+          {url ? (
+            <div>
+              <ReactPlayer url={url} />
+              <Button
+                isLoading={isPending}
+                onClick={() => handleSubmit()}
+                className="w-full mt-3 border bg-[#37b385] hover:bg-[#50cea0] border-gray-800"
+              >
+                Generate
+                <span className="ml-2">
+                  <Sparkles className="h-4 w-4" />
+                </span>
+              </Button>
+            </div>
+          ) : (
+            <div className="mt-16 flex flex-col items-center gap-2 bg-zinc-900 p-20 rounded-xl border border-slate-700">
+              <Clapperboard className="h-28 w-28 text-[#1ADE97]" />
+              <h3 className="font-semibold text-xl">Captions on the go!</h3>
+              <p>Enter the url to start rendering the captions.</p>
+            </div>
+          )}
         </div>
         <div className="mt-5">
           {res && (

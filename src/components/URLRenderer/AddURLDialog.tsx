@@ -21,7 +21,10 @@ export function AddURLDialog() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="default" className="dark">
+        <Button
+          variant="default"
+          className="dark border border-[#1d5843] shadow shadow-green-300/30 hover:shadow-green-400/50"
+        >
           Add a URL
           <span className="ml-2">
             <PlusIcon className="h-4 w-4" />
