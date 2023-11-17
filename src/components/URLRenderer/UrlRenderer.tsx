@@ -38,7 +38,7 @@ export default function UrlRenderer() {
         <div className="flex items-center justify-center">
           {url ? (
             <div>
-              <ReactPlayer url={url} />
+              <ReactPlayer url={url} controls />
               <Button
                 isLoading={isPending}
                 onClick={() => handleSubmit()}

@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { toast } from "sonner";
 
@@ -18,7 +18,7 @@ export default function LandingPage() {
   const session = useSession();
 
   return (
-    <>
+    <div className="min-h-screen">
       <div className="relative isolate">
         <div
           aria-hidden="true"
@@ -45,7 +45,7 @@ export default function LandingPage() {
           />
         </div>
       </div>
-      <Navbar />
+
       <div className="flex flex-col relative items-center text-center justify-center min-h-[calc(100vh-14vh)]">
         <div className="mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-[#1ADE97] bg-slate-900 px-7 py-2 shadow-md backdrop-blur transition-all">
           <p className="text-sm font-semibold text-white">
@@ -95,6 +95,6 @@ export default function LandingPage() {
           </div>
         </a>
       </div>
-    </>
+    </div>
   );
 }
